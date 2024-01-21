@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Card = ({children}) => {
   return (
@@ -7,3 +8,7 @@ const Card = ({children}) => {
 }
 
 export default Card
+
+Card.defaultProps={reerse:false}
+Card.propTypes={children:PropTypes.node.isRequired,
+reserve:PropTypes.bool}
