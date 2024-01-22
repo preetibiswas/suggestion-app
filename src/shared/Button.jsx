@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = ({children,type,version,isDisabled }) => {
+const Button = ({children,type,version, btnDisabled }) => {
   return (
     <button 
     className={`btn btn-${version}`} 
     type={type}
-    disabled={isDisabled}
+    disabled={ btnDisabled}
 
      >{children}</button>
   )
@@ -20,5 +20,5 @@ Button.defaultProps={
 }
 
 Button.propTypes={
-    isDisabled:PropTypes.bool
+  btnDisabled:PropTypes.bool
 }

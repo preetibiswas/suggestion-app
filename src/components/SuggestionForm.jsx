@@ -22,6 +22,7 @@ const handleTextChange=(e)=>{
     else{
         setMessage(null)
         setBtnDisabled(false)
+       
     }
     setText(e.target.value)
 
@@ -33,9 +34,13 @@ const handleSubmit=(e)=>{
       text,
       rating
     }
-    console.log(newFeedback)
+   
+    setText('')
     handleAdd(newFeedback)
+   
+
   }
+  
 
 }
   return (
@@ -44,11 +49,14 @@ const handleSubmit=(e)=>{
         <h2>how would you Rate our service with us?</h2>
         <RatingSelect select={(rating)=>setRating(rating)}/>
         <div className="input-group">
-          <input type="text" placeholder="Write a suggestion" onChange={handleTextChange} />
+          <input 
+          type="text"
+          value={text}
+           placeholder="Write a suggestion" onChange={handleTextChange} />
           <Button 
           type='submit'
         version='secondary'
-        isDisabled={isDisabled}
+        btnDisabled={btnDisabled}
         >send</Button>
           
         </div>
