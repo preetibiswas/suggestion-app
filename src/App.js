@@ -3,6 +3,7 @@ import SuggestionData from './data/SuggestionData'
 import Suggestionitem from './components/Suggestionitem'
 import SuggestionList from './components/SuggestionList'
 import { useState } from 'react'
+import SuggestionForm from './components/SuggestionForm'
 
 import SuggestionState from './components/SuggestionState'
 
@@ -17,6 +18,7 @@ function App() {
     <>
       <Header />
       <div className="container">
+        <SuggestionForm />
         <SuggestionState suggestion={suggestion} />
         <SuggestionList suggestion={suggestion} handleDelete={handleDelete} />
       </div>

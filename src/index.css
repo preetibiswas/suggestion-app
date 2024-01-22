@@ -83,4 +83,44 @@ ul {
   align-items: center;
 }
 
+.btn{
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+.btn-secondary{
+  background: #ff6a95;
+}
+
+.btn-primary{
+  background: #202142;
+}
+.btn:hover{
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+.btn:disabled{
+  background-color: #cccccc;
+  color: #333;
+  cursor: auto;
+}
+.input-group{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+input{
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+}
+input:focus{
+  outline: none;
+}
+
 
