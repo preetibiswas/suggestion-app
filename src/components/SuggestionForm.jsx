@@ -1,15 +1,29 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import Card from "../shared/Card";
 import Button from "../shared/Button";
 import { FaHandLizard } from "react-icons/fa";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 import RatingSelect from "./RatingSelect";
+import { useContext } from "react";
+import SuggestionContext from "../context/SuggestionContext";
 
-const SuggestionForm = ({handleAdd}) => {
+const SuggestionForm = () => {
+  const {handleAdd,suggestionEdit,updateSuggestion}= useContext(SuggestionContext)
   const [text, setText] = useState("");
   const [btnDisabled,setBtnDisabled]= useState(true)
   const [message,setMessage]=useState('')
   const [rating,setRating]= useState(10)
+
+  useEffect(()=>{
+    if(suggestionEdit.edit === true){
+      setBtnDisabled(false)
+      setText(suggestionEdit.item.text)
+      setRating(suggestionEdit.item.rating)
+  
+    }
+
+  },[suggestionEdit])
+
 const handleTextChange=(e)=>{
     if(text === ''){
         setBtnDisabled(true)
@@ -19,6 +33,7 @@ const handleTextChange=(e)=>{
         setMessage('text must br atleast 10 character')
         setBtnDisabled(true)
     }
+    
     else{
         setMessage(null)
         setBtnDisabled(false)
@@ -34,9 +49,18 @@ const handleSubmit=(e)=>{
       text,
       rating
     }
+
+    if(suggestionEdit.edit === true){
+      updateSuggestion(suggestionEdit.item.id, newFeedback)
+    }
+    else{
+     
+      handleAdd(newFeedback)
+
+    }
+    setText('') 
    
-    setText('')
-    handleAdd(newFeedback)
+   
    
 
   }

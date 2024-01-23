@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const SuggestionState = ({suggestion}) => {
+import { useContext } from 'react'
+import SuggestionContext from '../context/SuggestionContext'
+const SuggestionState = () => {
+    const {suggestion}= useContext(SuggestionContext)
     let average= suggestion.reduce((acc,cur)=>{
         return acc+ cur.rating
     },0)/suggestion.length

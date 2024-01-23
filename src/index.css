@@ -68,6 +68,7 @@ ul {
   top:-10px;
   left:-10px
 } 
+.edit,
 .close{
   border: none;
   background: none;
@@ -153,5 +154,8 @@ input:focus{
 [type='radio']:checked~label{
   background: #ff6a95;
   color: #fff;
+}
+.edit{
+right: 40px;
 }
 

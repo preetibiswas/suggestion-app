@@ -2,12 +2,16 @@ import React from 'react'
 import Suggestionitem from './Suggestionitem'
 import PropTypes from 'prop-types'
 import { motion, AnimatePresence } from "framer-motion"
+import { useContext } from 'react'
+import SuggestionContext from '../context/SuggestionContext'
 
-const SuggestionList = ({suggestion,handleDelete}) => {
-    console.log(suggestion)
+const SuggestionList = ({handleDelete}) => {
+    
+    const {suggestion}= useContext(SuggestionContext)
     if(!suggestion || suggestion.length === 0){
         return <p>No Suggestion</p>
     }
+
   return (
     <AnimatePresence>
       <div className='feedback-list'>

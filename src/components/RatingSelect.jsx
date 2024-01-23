@@ -1,7 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useContext } from "react";
+import SuggestionContext from "../context/SuggestionContext";
 
 const RatingSelect = ({select}) => {
   const [selected, setSelected] = useState(10);
+  const { suggestionEdit } =useContext(SuggestionContext)
+
+
+  useEffect(()=>{
+  
+      setSelected(suggestionEdit.item.rating)
+
+    
+
+  },[suggestionEdit])
+
+
   const handleChange = (e) => {
     console.log(+e.currentTarget.value)
     setSelected(+e.currentTarget.value)
@@ -13,6 +27,7 @@ const RatingSelect = ({select}) => {
     <ul className="rating">
       <li>
         <input
+        checked={selected===1}
           type="radio"
           id="num1"
           name="rating"
@@ -23,6 +38,7 @@ const RatingSelect = ({select}) => {
       </li>
       <li>
         <input
+        checked={selected===2}
           type="radio"
           id="num2"
           name="rating"
@@ -33,6 +49,7 @@ const RatingSelect = ({select}) => {
       </li>
       <li>
         <input
+        checked={selected===3}
           type="radio"
           id="num3"
           name="rating"
@@ -43,6 +60,7 @@ const RatingSelect = ({select}) => {
       </li>
       <li>
         <input
+        checked={selected===4}
           type="radio"
           id="num4"
           name="rating"
@@ -53,6 +71,7 @@ const RatingSelect = ({select}) => {
       </li>
       <li>
         <input
+        checked={selected===5}
           type="radio"
           id="num5"
           name="rating"
@@ -63,6 +82,7 @@ const RatingSelect = ({select}) => {
       </li>
       <li>
         <input
+        checked={selected===6}
           type="radio"
           id="num6"
           name="rating"
@@ -73,6 +93,7 @@ const RatingSelect = ({select}) => {
       </li>
       <li>
         <input
+        checked={selected===7}
           type="radio"
           id="num7"
           name="rating"
@@ -84,6 +105,7 @@ const RatingSelect = ({select}) => {
 
       <li>
         <input
+        checked={selected===8}
           type="radio"
           id="num8"
           name="rating"
@@ -94,6 +116,7 @@ const RatingSelect = ({select}) => {
       </li>
       <li>
         <input
+        checked={selected===9}
           type="radio"
           id="num9"
           name="rating"
@@ -104,6 +127,7 @@ const RatingSelect = ({select}) => {
       </li>
       <li>
         <input
+        checked={selected===10}
           type="radio"
           id="num10"
           name="rating"
