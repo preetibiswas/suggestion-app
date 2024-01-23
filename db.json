@@ -1,0 +1,29 @@
+{
+  "suggestion": [
+    {
+      "text": "Engage in diverse projects,",
+      "rating": 7,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "rating": 5,
+      "text": "stay updated on emerging technologies"
+    },
+    {
+      "text": "actively contribute to open-source",
+      "rating": 10,
+      "id": 3
+    },
+    {
+      "text": "prioritize responsive design and accessibility",
+      "rating": 7,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "rating": 9,
+      "text": "egularly participate in coding challenges for continuous skill improvement"
+    }
+  ]
+}
